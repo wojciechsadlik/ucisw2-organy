@@ -44,7 +44,7 @@ begin
 			iCLK32kHz <= '0';
 		elsif rising_edge(CLK50MHz) then
 			tmp <= tmp + 1;
-			if tmp = X"30D" then		--0x30D = 50 000 / 32 / 2
+			if tmp = X"30C" then		--0x30C = 50 000 / 32 / 2 - 1
 				iCLK32kHz <= not iCLK32kHz;
 				tmp <= X"000";
 			end if;			

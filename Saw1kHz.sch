@@ -9,12 +9,6 @@
         <signal name="CLK50MHz" />
         <signal name="Q(4:0)" />
         <signal name="CLR" />
-        <signal name="XLXN_7" />
-        <signal name="XLXN_9" />
-        <signal name="XLXN_11" />
-        <signal name="XLXN_13" />
-        <signal name="XLXN_15" />
-        <signal name="XLXN_17" />
         <signal name="XLXN_18" />
         <port polarity="Input" name="CLK50MHz" />
         <port polarity="Output" name="Q(4:0)" />
@@ -28,7 +22,7 @@
             <line x2="384" y1="-96" y2="-96" x1="320" />
         </blockdef>
         <blockdef name="Prescaler">
-            <timestamp>2020-3-25T10:40:7</timestamp>
+            <timestamp>2020-3-25T16:11:34</timestamp>
             <line x2="384" y1="32" y2="32" x1="320" />
             <line x2="0" y1="-96" y2="-96" x1="64" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
