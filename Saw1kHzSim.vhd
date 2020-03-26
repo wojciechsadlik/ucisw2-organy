@@ -23,13 +23,24 @@ ARCHITECTURE behavioral OF Saw1kHz_Saw1kHz_sch_tb IS
 
    COMPONENT Saw1kHz
    PORT( CLK50MHz	:	IN	STD_LOGIC; 
-          CLR	:	IN	STD_LOGIC; 
-          Q	:	OUT	STD_LOGIC_VECTOR (4 DOWNTO 0));
-   END COMPONENT;
+         CLR	:	IN	STD_LOGIC; 
+			StartOUT : OUT  STD_LOGIC;
+			CmdOUT : OUT  STD_LOGIC_VECTOR (3 downto 0);
+			AddrOUT : OUT  STD_LOGIC_VECTOR (3 downto 0);
+         Q : OUT  STD_LOGIC_VECTOR(4 downto 0)
+        );
+    END COMPONENT;
+    
 
-   SIGNAL CLK50MHz	:	STD_LOGIC := '0';
-   SIGNAL CLR	:	STD_LOGIC := '1';
-   SIGNAL Q	:	STD_LOGIC_VECTOR (4 DOWNTO 0);
+   --Inputs
+   signal CLK50MHz : STD_LOGIC := '0';
+   signal CLR : STD_LOGIC := '1';
+
+ 	--Outputs
+   signal Q : STD_LOGIC_VECTOR(4 downto 0);
+	signal StartOUT : STD_LOGIC;
+	signal CmdOUT : STD_LOGIC_VECTOR (3 downto 0);
+	signal AddrOUT : STD_LOGIC_VECTOR (3 downto 0);
 	
 	constant CLK_period : time := 20 ns;
 
@@ -37,7 +48,10 @@ BEGIN
 
    UUT: Saw1kHz PORT MAP(
 		CLK50MHz => CLK50MHz, 
-		CLR => CLR, 
+		CLR => CLR,
+		StartOUT => StartOUT,
+		CmdOUT => CmdOUT,
+      AddrOUT => AddrOUT,		
 		Q => Q
    );
 

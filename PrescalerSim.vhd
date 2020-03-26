@@ -41,19 +41,19 @@ ARCHITECTURE behavior OF PrescalerSim IS
  
     COMPONENT Prescaler
     PORT(
-         CLK50MHz : IN  std_logic;
-         CLR : IN  std_logic;
-         CLK32kHz : OUT  std_logic
+         CLK50MHz : IN  STD_LOGIC;
+         CLR : IN  STD_LOGIC;
+         CLK32kHz : OUT  STD_LOGIC
         );
     END COMPONENT;
     
 
    --Inputs
-   signal CLK50MHz : std_logic := '0';
-   signal CLR : std_logic := '1';
+   signal CLK50MHz : STD_LOGIC := '0';
+   signal CLR : STD_LOGIC := '1';
 
  	--Outputs
-   signal CLK32kHz : std_logic;
+   signal CLK32kHz : STD_LOGIC;
 
    -- Clock period definitions
    constant CLK50MHz_period : time := 20 ns;

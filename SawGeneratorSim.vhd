@@ -41,19 +41,25 @@ ARCHITECTURE behavior OF SawGenerator_TestBench IS
  
     COMPONENT SawGenerator
     PORT(
-         CLK : IN  std_logic;
-         CLR : IN  std_logic;
-         Q : OUT  std_logic_vector(4 downto 0)
+         CLK : IN  STD_LOGIC;
+         CLR : IN  STD_LOGIC;
+			StartOUT : OUT  STD_LOGIC;
+			CmdOUT : OUT  STD_LOGIC_VECTOR (3 downto 0);
+			AddrOUT : OUT  STD_LOGIC_VECTOR (3 downto 0);
+         Q : OUT  STD_LOGIC_VECTOR(4 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal CLK : std_logic := '0';
-   signal CLR : std_logic := '1';
+   signal CLK : STD_LOGIC := '0';
+   signal CLR : STD_LOGIC := '1';
 
  	--Outputs
-   signal Q : std_logic_vector(4 downto 0);
+   signal Q : STD_LOGIC_VECTOR(4 downto 0);
+	signal StartOUT : STD_LOGIC;
+	signal CmdOUT : STD_LOGIC_VECTOR (3 downto 0);
+	signal AddrOUT : STD_LOGIC_VECTOR (3 downto 0);
 
    -- Clock period definitions
    constant CLK_period : time := 20 ns;
@@ -64,6 +70,9 @@ BEGIN
    uut: SawGenerator PORT MAP (
           CLK => CLK,
           CLR => CLR,
+			 StartOUT => StartOUT,
+			 CmdOUT => CmdOUT,
+          AddrOUT => AddrOUT,
           Q => Q
         );
 
