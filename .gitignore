@@ -36,4 +36,5 @@
 *.csv
 *.err
 *.ini
+*.schlog
 sch2HdlBatchFile
