@@ -44,13 +44,13 @@ begin
 	process (CLK, CLR)
 	begin
 		if CLR = '1' then
-			tmp <= X"000";
+			scalertmp <= X"000";
 			iCE <= '0';
 		elsif rising_edge(CLK) then
-			tmp <= tmp + 1;
-			if tmp = X"30D" then		--0x30D = 50 000 / 32 / 2
+			scalertmp <= scalertmp + 1;
+			if scalertmp = X"61A" then		--0x61A = 50 000 / 32
 				iCE <= not iCE;
-				tmp <= X"000";
+				scalertmp <= X"000";
 			elsif iCE = '1' then
 				iCE <= '0';
 			end if;			
