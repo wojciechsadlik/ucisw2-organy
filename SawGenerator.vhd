@@ -41,8 +41,31 @@ end SawGenerator;
 architecture Behavioral of SawGenerator is
 	signal tmp: UNSIGNED(4 downto 0);
 	signal scalertmp: UNSIGNED(11 downto 0);
+	signal scalertmpmax: UNSIGNED(11 downto 0);
 	signal iCE : STD_LOGIC;
 begin
+
+--	process (DI_Rdy, F0, CLR)
+--	begin
+--		if DI_Rdy = '1' then
+--			case DI is
+--				when X"1C" =>	;	--A - C'		261.6256Hz
+--				when X"1D" =>	;	--W - C#'	277.1826Hz
+--				when X"1B" =>	;	--S - D'		293.6648Hz
+--				when X"24" =>	;	--E - D#'	311.1270Hz
+--				when X"23" =>	;	--D - E'		329.6276Hz
+--				when X"2B" =>	;	--F - F'		349.2282Hz
+--				when X"2C" =>	;	--T - F#'	369.9944Hz
+--				when X"34" =>	;	--G - G'		391.9954Hz
+--				when X"35" =>	;	--Y - G#'	415.3047Hz
+--				when X"33" =>	;	--H - A'		440.0000Hz
+--				when X"3C" =>	;	--U - A#'	466.1638Hz
+--				when X"3B" =>	;	--J - B'		493.8833Hz
+--				when X"42" =>	;	--K - C''	523.2511Hz
+--				when others =>	;	--???
+--			end case;
+--		end if;
+--	end process;
 
 	process (CLK, CLR)
 	begin
@@ -69,6 +92,7 @@ begin
 		end if;
 	end process;
 	
+
 	
 	DO <= STD_LOGIC_VECTOR(tmp);
 	CmdO <= "0011";
