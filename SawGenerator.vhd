@@ -40,7 +40,7 @@ architecture Behavioral of SawGenerator is
 	signal scalertmp: UNSIGNED(11 downto 0);
 	signal iCE : STD_LOGIC;
 begin
-	
+
 	process (CLK, CLR)
 	begin
 		if CLR = '1' then
@@ -67,6 +67,9 @@ begin
 	end process;
 	
 	Q <= STD_LOGIC_VECTOR(tmp);
+	CmdOUT <= "0011";
+	AddrOUT <= "1111";
+	StartOUT <= iCE;
 
 end Behavioral;
 
