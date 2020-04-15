@@ -29,6 +29,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity SawGenerator is
     Port ( CLK : in  STD_LOGIC;
            CLR : in  STD_LOGIC;
+			  D : in STD_LOGIC_VECTOR (7 downto 0);
 			  StartO : out  STD_LOGIC;
 			  CmdO : out  STD_LOGIC_VECTOR (3 downto 0);
            AddrO : out  STD_LOGIC_VECTOR (3 downto 0);

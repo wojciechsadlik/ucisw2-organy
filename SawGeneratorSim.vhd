@@ -43,6 +43,7 @@ ARCHITECTURE behavior OF SawGeneratorSim IS
     PORT(
          CLK : IN  std_logic;
          CLR : IN  std_logic;
+			D : in std_logic_vector(7 downto 0);
          StartO : OUT  std_logic;
          CmdO : OUT  std_logic_vector(3 downto 0);
          AddrO : OUT  std_logic_vector(3 downto 0);
@@ -54,6 +55,7 @@ ARCHITECTURE behavior OF SawGeneratorSim IS
    --Inputs
    signal CLK : std_logic := '0';
    signal CLR : std_logic := '0';
+	signal  	D : std_logic_vector(7 downto 0) := "00000000";
 
  	--Outputs
    signal StartO : std_logic;
@@ -70,6 +72,7 @@ BEGIN
    uut: SawGenerator PORT MAP (
           CLK => CLK,
           CLR => CLR,
+			 D => D,
           StartO => StartO,
           CmdO => CmdO,
           AddrO => AddrO,
