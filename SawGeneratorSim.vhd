@@ -43,10 +43,10 @@ ARCHITECTURE behavior OF SawGeneratorSim IS
     PORT(
          CLK : IN  std_logic;
          CLR : IN  std_logic;
-         StartOUT : OUT  std_logic;
-         CmdOUT : OUT  std_logic_vector(3 downto 0);
-         AddrOUT : OUT  std_logic_vector(3 downto 0);
-         Q : OUT  std_logic_vector(4 downto 0)
+         StartO : OUT  std_logic;
+         CmdO : OUT  std_logic_vector(3 downto 0);
+         AddrO : OUT  std_logic_vector(3 downto 0);
+         DO : OUT  std_logic_vector(4 downto 0)
         );
     END COMPONENT;
     
@@ -56,10 +56,10 @@ ARCHITECTURE behavior OF SawGeneratorSim IS
    signal CLR : std_logic := '0';
 
  	--Outputs
-   signal StartOUT : std_logic;
-   signal CmdOUT : std_logic_vector(3 downto 0);
-   signal AddrOUT : std_logic_vector(3 downto 0);
-   signal Q : std_logic_vector(4 downto 0);
+   signal StartO : std_logic;
+   signal CmdO : std_logic_vector(3 downto 0);
+   signal AddrO : std_logic_vector(3 downto 0);
+   signal DO : std_logic_vector(4 downto 0);
 
    -- Clock period definitions
    constant CLK_period : time := 20 ns;
@@ -70,10 +70,10 @@ BEGIN
    uut: SawGenerator PORT MAP (
           CLK => CLK,
           CLR => CLR,
-          StartOUT => StartOUT,
-          CmdOUT => CmdOUT,
-          AddrOUT => AddrOUT,
-          Q => Q
+          StartO => StartO,
+          CmdO => CmdO,
+          AddrO => AddrO,
+          DO => DO
         );
 
    CLK <= not CLK after CLK_period / 2;

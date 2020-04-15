@@ -29,10 +29,10 @@ use IEEE.NUMERIC_STD.ALL;
 entity SawGenerator is
     Port ( CLK : in  STD_LOGIC;
            CLR : in  STD_LOGIC;
-			  StartOUT : out  STD_LOGIC;
-			  CmdOUT : out  STD_LOGIC_VECTOR (3 downto 0);
-           AddrOUT : out  STD_LOGIC_VECTOR (3 downto 0);
-           Q : out  STD_LOGIC_VECTOR (4 downto 0));
+			  StartO : out  STD_LOGIC;
+			  CmdO : out  STD_LOGIC_VECTOR (3 downto 0);
+           AddrO : out  STD_LOGIC_VECTOR (3 downto 0);
+           DO : out  STD_LOGIC_VECTOR (4 downto 0));
 end SawGenerator;
 
 architecture Behavioral of SawGenerator is
@@ -66,10 +66,10 @@ begin
 		end if;
 	end process;
 	
-	Q <= STD_LOGIC_VECTOR(tmp);
-	CmdOUT <= "0011";
-	AddrOUT <= "1111";
-	StartOUT <= iCE;
+	DO <= STD_LOGIC_VECTOR(tmp);
+	CmdO <= "0011";
+	AddrO <= "1111";
+	StartO <= iCE;
 
 end Behavioral;
 
