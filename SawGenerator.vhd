@@ -40,8 +40,8 @@ end SawGenerator;
 
 architecture Behavioral of SawGenerator is
 	signal tmp: UNSIGNED(4 downto 0);
-	signal scalertmp: UNSIGNED(11 downto 0);
-	signal scalertmpmax: UNSIGNED(11 downto 0);
+	signal scalertmp: UNSIGNED(15 downto 0);
+	signal scalertmpmax: UNSIGNED(15 downto 0);
 	signal iCE : STD_LOGIC;
 begin
 
@@ -49,19 +49,19 @@ begin
 --	begin
 --		if DI_Rdy = '1' then
 --			case DI is
---				when X"1C" =>	;	--A - C'		261.6256Hz
---				when X"1D" =>	;	--W - C#'	277.1826Hz
---				when X"1B" =>	;	--S - D'		293.6648Hz
---				when X"24" =>	;	--E - D#'	311.1270Hz
---				when X"23" =>	;	--D - E'		329.6276Hz
---				when X"2B" =>	;	--F - F'		349.2282Hz
---				when X"2C" =>	;	--T - F#'	369.9944Hz
---				when X"34" =>	;	--G - G'		391.9954Hz
---				when X"35" =>	;	--Y - G#'	415.3047Hz
---				when X"33" =>	;	--H - A'		440.0000Hz
---				when X"3C" =>	;	--U - A#'	466.1638Hz
---				when X"3B" =>	;	--J - B'		493.8833Hz
---				when X"42" =>	;	--K - C''	523.2511Hz
+--				when X"1C" =>	;	--A - C'		261.6256Hz => 50 000 000 / 261.6256 / 32 = 5 972 = 0x1754
+--				when X"1D" =>	;	--W - C#'	277.1826Hz => 50 000 000 / 277.1826 / 32 = 5 637 = 0x1605
+--				when X"1B" =>	;	--S - D'		293.6648Hz => 50 000 000 / 293.6648 / 32 = 5 320 = 0x14C8
+--				when X"24" =>	;	--E - D#'	311.1270Hz => 50 000 000 / 311.1270 / 32 = 5 022 = 0x139E
+--				when X"23" =>	;	--D - E'		329.6276Hz => 50 000 000 / 329.6276 / 32 = 4 740 = 0x1284
+--				when X"2B" =>	;	--F - F'		349.2282Hz => 50 000 000 / 349.2282 / 32 = 4 474 = 0x117A
+--				when X"2C" =>	;	--T - F#'	369.9944Hz => 50 000 000 / 369.9944 / 32 = 4 223 = 0x107F
+--				when X"34" =>	;	--G - G'		391.9954Hz => 50 000 000 / 391.9954 / 32 = 3 986 = 0x0F92
+--				when X"35" =>	;	--Y - G#'	415.3047Hz => 50 000 000 / 415.3047 / 32 = 3 762 = 0x0EB2
+--				when X"33" =>	;	--H - A'		440.0000Hz => 50 000 000 / 440.0000 / 32 = 3 551 = 0x0DDF
+--				when X"3C" =>	;	--U - A#'	466.1638Hz => 50 000 000 / 466.1638 / 32 = 3 351 = 0x0D17
+--				when X"3B" =>	;	--J - B'		493.8833Hz => 50 000 000 / 493.8833 / 32 = 3 163 = 0x0C5B
+--				when X"42" =>	;	--K - C''	523.2511Hz => 50 000 000 / 523.2511 / 32 = 2 986 = 0x0BAA
 --				when others =>	;	--???
 --			end case;
 --		end if;
@@ -70,13 +70,13 @@ begin
 	process (CLK, CLR)
 	begin
 		if CLR = '1' then
-			scalertmp <= X"000";
+			scalertmp <= X"0000";
 			iCE <= '0';
 		elsif rising_edge(CLK) then
 			scalertmp <= scalertmp + 1;
-			if scalertmp = X"61A" then		--0x61A = 50 000 / 32
+			if scalertmp = X"061A" then		--0x61A = 50 000 / 32
 				iCE <= not iCE;
-				scalertmp <= X"000";
+				scalertmp <= X"0000";
 			elsif iCE = '1' then
 				iCE <= '0';
 			end if;			
