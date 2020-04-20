@@ -38,3 +38,17 @@
 *.ini
 *.schlog
 sch2HdlBatchFile
+SawGenerator.ncd
+*.par
+*.pcf
+*.ptwx
+*.twr
+*.twx
+*.unroutes
+*.xpi
+*.ncd
+*.map
+*.mrp
+*.ncd
+*.ngm
+*.txt
