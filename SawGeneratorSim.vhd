@@ -100,6 +100,14 @@ BEGIN
 		
 		wait for 20 ns;
 		
+		DI <= X"34"; 							--wciœniêcie klawisza 34 -> G na klawiaturze (G' 391.9954Hz)
+		DI_Rdy <= '1', '0' after 20 ns;		
+		wait for 2.6 ms;						--trzymanie klawisza przez 2.6 ms
+		F0 <= '1', '0' after 20 ns;		--puszczenie klawisza
+		DI_Rdy <= '1', '0' after 20 ns;
+		
+		wait for 20 ns;
+		
 		DI <= X"42"; 							--wciœniêcie klawisza 42 -> K na klawiaturze (C'' 523.2511Hz)
 		DI_Rdy <= '1', '0' after 20 ns;		
 		wait for 2 ms;							--trzymanie klawisza przez 2 ms
