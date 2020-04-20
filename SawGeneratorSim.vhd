@@ -87,6 +87,26 @@ BEGIN
 
    CLK <= not CLK after CLK_period / 2;
 	
-	CLR <= '1', '0' after 10 ns;
-
+	CLR <= '1', '0' after 20 ns;
+	
+	STIM_Proc: process 					--proces do testowania
+	BEGIN
+	
+		DI <= X"1C"; 							--wciœniêcie klawisza 1C -> A na klawiaturze
+		DI_Rdy <= '1', '0' after 20 ns;		
+		wait for 4 ms;							--trzymanie klawisza przez 4 ms
+		F0 <= '1', '0' after 20 ns;		--puszczenie klawisza
+		DI_Rdy <= '1', '0' after 20 ns;
+		
+		wait for 20 ns;
+		
+		DI <= X"42"; 							--wciœniêcie klawisza 42 -> K na klawiaturze
+		DI_Rdy <= '1', '0' after 20 ns;		
+		wait for 2 ms;							--trzymanie klawisza przez 2 ms
+		F0 <= '1', '0' after 20 ns;		--puszczenie klawisza
+		DI_Rdy <= '1', '0' after 20 ns;
+		
+		wait;
+	END PROCESS;
+	
 END;
