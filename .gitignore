@@ -38,7 +38,7 @@
 *.ini
 *.schlog
 sch2HdlBatchFile
-SawGenerator.ncd
+*.ncd
 *.par
 *.pcf
 *.ptwx
