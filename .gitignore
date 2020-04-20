@@ -7,7 +7,6 @@
 *.cmd_log
 *.spl
 *.stx
-*.sym
 *.xst
 *.exe
 *.bld
@@ -16,7 +15,6 @@
 *.lso
 *.mfd
 *.nga
-*.ngc
 *.ngd
 *.ngr
 *.pad
@@ -52,3 +50,4 @@ sch2HdlBatchFile
 *.ncd
 *.ngm
 *.txt
+*.vf
