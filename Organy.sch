@@ -11,9 +11,6 @@
         <signal name="XLXN_6" />
         <signal name="PS2_Clk" />
         <signal name="PS2_Data" />
-        <signal name="XLXN_11" />
-        <signal name="XLXN_12" />
-        <signal name="XLXN_15" />
         <signal name="DATA(11:0)" />
         <signal name="DATA(4:0)" />
         <signal name="SPI_MOSI" />
@@ -31,12 +28,10 @@
         <signal name="XLXN_36" />
         <signal name="Reset" />
         <signal name="Clk_Sys" />
-        <signal name="XLXN_39" />
-        <signal name="XLXN_40" />
         <port polarity="Input" name="PS2_Clk" />
         <port polarity="Input" name="PS2_Data" />
         <port polarity="Output" name="SPI_MOSI" />
-        <port polarity="Output" name="SPI_MISO" />
+        <port polarity="Input" name="SPI_MISO" />
         <port polarity="Output" name="SPI_SCK" />
         <port polarity="Output" name="DAC_CS" />
         <port polarity="Output" name="DAC_CLR" />
