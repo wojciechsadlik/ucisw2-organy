@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="SawGenerator">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2020-4-20T17:22:30</timestamp>
+    <timestamp>2020-4-23T7:30:52</timestamp>
+    <pin polarity="Input" x="0" y="-32" name="CLK" />
+    <pin polarity="Input" x="0" y="-96" name="CLR" />
     <pin polarity="Input" x="0" y="-160" name="DI_Rdy" />
+    <pin polarity="Input" x="0" y="-224" name="F0" />
+    <pin polarity="Input" x="0" y="-288" name="DI(7:0)" />
     <pin polarity="Output" x="384" y="-288" name="StartO" />
     <pin polarity="Output" x="384" y="-208" name="CmdO(3:0)" />
     <pin polarity="Output" x="384" y="-128" name="AddrO(3:0)" />
     <pin polarity="Output" x="384" y="-48" name="DO(4:0)" />
-    <pin polarity="Input" x="0" y="-288" name="DI(7:0)" />
-    <pin polarity="Input" x="0" y="-32" name="CLK" />
-    <pin polarity="Input" x="0" y="-96" name="CLR" />
-    <pin polarity="Input" x="0" y="-224" name="F0" />
     <graph>
-        <rect width="256" x="64" y="-320" height="320" />
         <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-328" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-32" type="pin CLK" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-96" type="pin CLR" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="68" y="-160" type="pin DI_Rdy" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-224" type="pin F0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-288" type="pin DI(7:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-288" type="pin StartO" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-208" type="pin CmdO(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-128" type="pin AddrO(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-48" type="pin DO(4:0)" />
+        <rect width="256" x="64" y="-320" height="320" />
         <line x2="0" y1="-224" y2="-224" x1="64" />
         <line x2="0" y1="-160" y2="-160" x1="64" />
         <line x2="0" y1="-96" y2="-96" x1="64" />
         <rect width="64" x="0" y="-300" height="24" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-288" type="pin StartO" />
         <line x2="384" y1="-288" y2="-288" x1="320" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-208" type="pin CmdO(3:0)" />
         <rect width="64" x="320" y="-220" height="24" />
         <line x2="384" y1="-208" y2="-208" x1="320" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-128" type="pin AddrO(3:0)" />
         <rect width="64" x="320" y="-140" height="24" />
         <line x2="384" y1="-128" y2="-128" x1="320" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="-48" type="pin DO(4:0)" />
         <rect width="64" x="320" y="-60" height="24" />
         <line x2="384" y1="-48" y2="-48" x1="320" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-288" type="pin DI(7:0)" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-224" type="pin F0" />
         <line x2="0" y1="-32" y2="-32" x1="64" />
         <line x2="0" y1="-288" y2="-288" x1="64" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-32" type="pin CLK" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-96" type="pin CLR" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="68" y="-160" type="pin DI_Rdy" />
     </graph>
 </symbol>

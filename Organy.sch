@@ -42,19 +42,6 @@
         <port polarity="Output" name="FPGA_INIT_B" />
         <port polarity="Input" name="Reset" />
         <port polarity="Input" name="Clk_Sys" />
-        <blockdef name="PS2_Kbd">
-            <timestamp>2008-9-19T9:9:36</timestamp>
-            <line x2="384" y1="-160" y2="-160" x1="320" />
-            <line x2="384" y1="-96" y2="-96" x1="320" />
-            <line x2="0" y1="-224" y2="-224" x1="64" />
-            <line x2="0" y1="-160" y2="-160" x1="64" />
-            <line x2="0" y1="-96" y2="-96" x1="64" />
-            <line x2="384" y1="-32" y2="-32" x1="320" />
-            <rect width="64" x="320" y="-236" height="24" />
-            <line x2="384" y1="-224" y2="-224" x1="320" />
-            <rect width="256" x="64" y="-256" height="256" />
-            <line x2="0" y1="-32" y2="-32" x1="64" />
-        </blockdef>
         <blockdef name="DACWrite">
             <timestamp>2009-10-4T15:3:32</timestamp>
             <line x2="0" y1="-544" y2="-544" x1="64" />
@@ -81,7 +68,7 @@
             <line x2="0" y1="160" y2="160" x1="64" />
         </blockdef>
         <blockdef name="SawGenerator">
-            <timestamp>2020-4-20T17:22:30</timestamp>
+            <timestamp>2020-4-23T7:30:52</timestamp>
             <rect width="256" x="64" y="-320" height="320" />
             <line x2="0" y1="-224" y2="-224" x1="64" />
             <line x2="0" y1="-160" y2="-160" x1="64" />
@@ -97,16 +84,19 @@
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <line x2="0" y1="-288" y2="-288" x1="64" />
         </blockdef>
-        <block symbolname="PS2_Kbd" name="XLXI_1">
-            <blockpin signalname="PS2_Clk" name="PS2_Clk" />
-            <blockpin signalname="PS2_Data" name="PS2_Data" />
-            <blockpin signalname="Clk_Sys" name="Clk_50MHz" />
-            <blockpin name="E0" />
-            <blockpin signalname="XLXN_35" name="F0" />
-            <blockpin signalname="XLXN_36" name="DO_Rdy" />
-            <blockpin signalname="XLXN_34(7:0)" name="DO(7:0)" />
-            <blockpin signalname="Clk_Sys" name="Clk_Sys" />
-        </block>
+        <blockdef name="PS2_Kbd">
+            <timestamp>2008-9-19T9:9:36</timestamp>
+            <line x2="384" y1="-160" y2="-160" x1="320" />
+            <line x2="384" y1="-96" y2="-96" x1="320" />
+            <line x2="0" y1="-224" y2="-224" x1="64" />
+            <line x2="0" y1="-160" y2="-160" x1="64" />
+            <line x2="0" y1="-96" y2="-96" x1="64" />
+            <line x2="384" y1="-32" y2="-32" x1="320" />
+            <rect width="64" x="320" y="-236" height="24" />
+            <line x2="384" y1="-224" y2="-224" x1="320" />
+            <rect width="256" x="64" y="-256" height="256" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+        </blockdef>
         <block symbolname="DACWrite" name="XLXI_2">
             <blockpin signalname="Reset" name="Reset" />
             <blockpin signalname="XLXN_6" name="Start" />
@@ -128,20 +118,28 @@
             <blockpin signalname="Clk_Sys" name="Clk_Sys" />
         </block>
         <block symbolname="SawGenerator" name="XLXI_3">
+            <blockpin signalname="Clk_Sys" name="CLK" />
+            <blockpin signalname="Reset" name="CLR" />
             <blockpin signalname="XLXN_36" name="DI_Rdy" />
+            <blockpin signalname="XLXN_35" name="F0" />
+            <blockpin signalname="XLXN_34(7:0)" name="DI(7:0)" />
             <blockpin signalname="XLXN_6" name="StartO" />
             <blockpin signalname="XLXN_5(3:0)" name="CmdO(3:0)" />
             <blockpin signalname="XLXN_4(3:0)" name="AddrO(3:0)" />
             <blockpin signalname="DATA(4:0)" name="DO(4:0)" />
-            <blockpin signalname="XLXN_34(7:0)" name="DI(7:0)" />
-            <blockpin signalname="Clk_Sys" name="CLK" />
-            <blockpin signalname="Reset" name="CLR" />
+        </block>
+        <block symbolname="PS2_Kbd" name="XLXI_4">
+            <blockpin signalname="PS2_Clk" name="PS2_Clk" />
+            <blockpin signalname="PS2_Data" name="PS2_Data" />
+            <blockpin signalname="Clk_Sys" name="Clk_50MHz" />
+            <blockpin name="E0" />
             <blockpin signalname="XLXN_35" name="F0" />
+            <blockpin signalname="XLXN_36" name="DO_Rdy" />
+            <blockpin signalname="XLXN_34(7:0)" name="DO(7:0)" />
+            <blockpin signalname="Clk_Sys" name="Clk_Sys" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
-        <instance x="624" y="1376" name="XLXI_1" orien="R0">
-        </instance>
         <instance x="1296" y="1408" name="XLXI_3" orien="R0">
         </instance>
         <branch name="XLXN_4(3:0)">
@@ -157,11 +155,9 @@
         <branch name="PS2_Clk">
             <wire x2="624" y1="1152" y2="1152" x1="592" />
         </branch>
-        <iomarker fontsize="28" x="592" y="1152" name="PS2_Clk" orien="R180" />
         <branch name="PS2_Data">
             <wire x2="624" y1="1216" y2="1216" x1="592" />
         </branch>
-        <iomarker fontsize="28" x="592" y="1216" name="PS2_Data" orien="R180" />
         <instance x="2352" y="1472" name="XLXI_2" orien="R0">
         </instance>
         <branch name="XLXN_6">
@@ -169,8 +165,6 @@
             <wire x2="2352" y1="928" y2="928" x1="1840" />
             <wire x2="1840" y1="928" y2="1120" x1="1840" />
         </branch>
-        <iomarker fontsize="28" x="528" y="1568" name="Clk_Sys" orien="R180" />
-        <iomarker fontsize="28" x="528" y="1504" name="Reset" orien="R180" />
         <branch name="DATA(11:0)">
             <wire x2="2128" y1="1120" y2="1120" x1="2112" />
             <wire x2="2352" y1="1120" y2="1120" x1="2128" />
@@ -255,5 +249,11 @@
             <wire x2="1296" y1="1376" y2="1376" x1="1216" />
             <wire x2="1216" y1="1376" y2="1568" x1="1216" />
         </branch>
+        <instance x="624" y="1376" name="XLXI_4" orien="R0">
+        </instance>
+        <iomarker fontsize="28" x="592" y="1152" name="PS2_Clk" orien="R180" />
+        <iomarker fontsize="28" x="592" y="1216" name="PS2_Data" orien="R180" />
+        <iomarker fontsize="28" x="528" y="1504" name="Reset" orien="R180" />
+        <iomarker fontsize="28" x="528" y="1568" name="Clk_Sys" orien="R180" />
     </sheet>
 </drawing>
