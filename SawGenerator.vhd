@@ -45,9 +45,11 @@ architecture Behavioral of SawGenerator is
 	signal iCE : STD_LOGIC;
 begin
 
-	process (DI_Rdy, F0, CLK, CLR)
+	process (CLK, CLR)
 	begin
-		if rising_edge(CLK) then
+		if CLR = '1' then
+				scalertmpmax <= X"FFFF";
+		elsif rising_edge(CLK) then
 			if DI_Rdy = '1' and F0 = '0' then
 				case DI is
 					when X"1C" =>	scalertmpmax <= X"1754";	--A - C'		261.6256Hz => 50 000 000 / 261.6256 / 32 = 5 972 = 0x1754

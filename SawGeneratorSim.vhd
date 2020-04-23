@@ -91,8 +91,9 @@ BEGIN
 	
 	STIM_Proc: process 					--proces do testowania
 	BEGIN
-	
-		DI <= X"1C"; 							--wciœniêcie klawisza 1C -> A na klawiaturze (C' 261.6256Hz)
+		wait for 20 ns;
+		
+		DI <= X"1C"; 				 			--wciœniêcie klawisza 1C -> A na klawiaturze (C' 261.6256Hz)
 		DI_Rdy <= '1', '0' after 20 ns;		
 		wait for 4 ms;							--trzymanie klawisza przez 4 ms
 		F0 <= '1', '0' after 20 ns;		--puszczenie klawisza
