@@ -52,19 +52,19 @@ begin
 		elsif rising_edge(CLK) then
 			if DI_Rdy = '1' and F0 = '0' then
 				case DI is
-					when X"1C" =>	scalertmpmax <= X"1754";	--A - C'		261.6256Hz => 50 000 000 / 261.6256 / 32 = 5 972 = 0x1754
-					when X"1D" =>	scalertmpmax <= X"1605";	--W - C#'	277.1826Hz => 50 000 000 / 277.1826 / 32 = 5 637 = 0x1605
-					when X"1B" =>	scalertmpmax <= X"14C8";	--S - D'		293.6648Hz => 50 000 000 / 293.6648 / 32 = 5 320 = 0x14C8
-					when X"24" =>	scalertmpmax <= X"139E";	--E - D#'	311.1270Hz => 50 000 000 / 311.1270 / 32 = 5 022 = 0x139E
-					when X"23" =>	scalertmpmax <= X"1284";	--D - E'		329.6276Hz => 50 000 000 / 329.6276 / 32 = 4 740 = 0x1284
-					when X"2B" =>	scalertmpmax <= X"117A";	--F - F'		349.2282Hz => 50 000 000 / 349.2282 / 32 = 4 474 = 0x117A
-					when X"2C" =>	scalertmpmax <= X"107F";	--T - F#'	369.9944Hz => 50 000 000 / 369.9944 / 32 = 4 223 = 0x107F
-					when X"34" =>	scalertmpmax <= X"0F92";	--G - G'		391.9954Hz => 50 000 000 / 391.9954 / 32 = 3 986 = 0x0F92
-					when X"35" =>	scalertmpmax <= X"0EB2";	--Y - G#'	415.3047Hz => 50 000 000 / 415.3047 / 32 = 3 762 = 0x0EB2
-					when X"33" =>	scalertmpmax <= X"0DDF";	--H - A'		440.0000Hz => 50 000 000 / 440.0000 / 32 = 3 551 = 0x0DDF
-					when X"3C" =>	scalertmpmax <= X"0D17";	--U - A#'	466.1638Hz => 50 000 000 / 466.1638 / 32 = 3 351 = 0x0D17
-					when X"3B" =>	scalertmpmax <= X"0C5B";	--J - B'		493.8833Hz => 50 000 000 / 493.8833 / 32 = 3 163 = 0x0C5B
-					when X"42" =>	scalertmpmax <= X"0BAA";	--K - C''	523.2511Hz => 50 000 000 / 523.2511 / 32 = 2 986 = 0x0BAA
+					when X"1C" =>	scalertmpmax <= X"0BAA";	--A - C''		523.2511Hz => 50 000 000 / 523.2511 / 32 = 0x0BAA
+					when X"1D" =>	scalertmpmax <= X"0B02";	--W - C#''		554.3653Hz => 50 000 000 / 554.3653 / 32 = 0x0B02
+					when X"1B" =>	scalertmpmax <= X"0A64";	--S - D''		587.3295Hz => 50 000 000 / 587.3295 / 32 = 0x0A64
+					when X"24" =>	scalertmpmax <= X"09CF";	--E - D#''		622.2540Hz => 50 000 000 / 622.2540 / 32 = 0x09CF
+					when X"23" =>	scalertmpmax <= X"0942";	--D - E''		659.2551Hz => 50 000 000 / 659.2551 / 32 = 0x0942
+					when X"2B" =>	scalertmpmax <= X"08BD";	--F - F''		698.4565Hz => 50 000 000 / 698.4565 / 32 = 0x08BD
+					when X"2C" =>	scalertmpmax <= X"083F";	--T - F#''		739.9888Hz => 50 000 000 / 739.9888 / 32 = 0x083F
+					when X"34" =>	scalertmpmax <= X"07C9";	--G - G''		783.9909Hz => 50 000 000 / 783.9909 / 32 = 0x07C9
+					when X"35" =>	scalertmpmax <= X"0759";	--Y - G#''		830.6094Hz => 50 000 000 / 830.6094 / 32 = 0x0759
+					when X"33" =>	scalertmpmax <= X"06EF";	--H - A''		880.0000Hz => 50 000 000 / 880.0000 / 32 = 0x06EF
+					when X"3C" =>	scalertmpmax <= X"068B";	--U - A#''		932.3275Hz => 50 000 000 / 932.3275 / 32 = 0x068B
+					when X"3B" =>	scalertmpmax <= X"062D";	--J - B''		987.7666Hz => 50 000 000 / 987.7666 / 32 = 0x062D
+					when X"42" =>	scalertmpmax <= X"05D5";	--K - C'''		1046.502Hz => 50 000 000 / 1046.502 / 32 = 0x05D5
 					when others =>	scalertmpmax <= X"FFFF";
 				end case;
 			elsif DI_Rdy = '1' and F0 = '1' then
