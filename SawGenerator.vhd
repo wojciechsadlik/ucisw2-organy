@@ -67,7 +67,7 @@ begin
 					when X"42" =>	scalertmpmax <= X"05D5";	--K - C'''		1046.502Hz => 50 000 000 / 1046.502 / 32 = 0x05D5
 					when others =>	scalertmpmax <= X"FFFF";
 				end case;
-			elsif DI_Rdy = '1' and F0 = '1' then
+			elsif F0 = '1' then
 				scalertmpmax <= X"FFFF";
 			end if;
 		end if;
