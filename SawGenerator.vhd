@@ -81,7 +81,9 @@ begin
 		elsif rising_edge(CLK) then
 			scalertmp <= scalertmp + 1;
 			if scalertmp = scalertmpmax then
-				iCE <= '1';
+				if scalertmpmax /= X"FFFF" then
+					iCE <= '1';
+				end if;
 				scalertmp <= X"0000";
 			elsif iCE = '1' then
 				iCE <= '0';
