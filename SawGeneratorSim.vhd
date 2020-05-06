@@ -69,11 +69,6 @@ ARCHITECTURE behavior OF SawGeneratorSim IS
 
    -- Clock period definitions
    constant CLK_period : time := 20 ns;
-	
-	type Buttons is array (0 to 12) of STD_LOGIC_VECTOR(7 downto 0); --tablica klawiszy 13 elementowa i ka¿dy klawisz jest 8 bitowy (kod klawisza PS2)
-
-	
-	
  
 BEGIN
  
