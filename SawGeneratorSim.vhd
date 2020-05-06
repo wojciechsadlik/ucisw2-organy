@@ -110,31 +110,7 @@ BEGIN
 		F0 <= '1';								--puszczenie klawisza
 		wait for 1 ms;
 	end loop;
---		wait for 20 ns;
---		
---		DI <= X"1C"; 				 			--wciœniêcie klawisza 1C -> A na klawiaturze (C' 261.6256Hz)
---		F0 <= '0';
---		DI_Rdy <= '1', '0' after 20 ns;		
---		wait for 4 ms;							--trzymanie klawisza
---		F0 <= '1';								--puszczenie klawisza
---		
---		wait for 1 ms;
---		
---		DI <= X"34"; 							--wciœniêcie klawisza 34 -> G na klawiaturze (G' 391.9954Hz)
---		F0 <= '0';
---		DI_Rdy <= '1', '0' after 20 ns;		
---		wait for 4 ms;							--trzymanie klawisza
---		F0 <= '1';								--puszczenie klawisza
---		
---		wait for 1 ms;
---		
---		DI <= X"42"; 							--wciœniêcie klawisza 42 -> K na klawiaturze (C'' 523.2511Hz)
---		F0 <= '0';
---		DI_Rdy <= '1', '0' after 20 ns;		
---		wait for 4 ms;							--trzymanie klawisza
---		F0 <= '1';								--puszczenie klawisza
---		
---		wait;
+	
 	END PROCESS;
 	
 END;
