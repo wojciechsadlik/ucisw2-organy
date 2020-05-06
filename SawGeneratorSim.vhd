@@ -69,6 +69,11 @@ ARCHITECTURE behavior OF SawGeneratorSim IS
 
    -- Clock period definitions
    constant CLK_period : time := 20 ns;
+	
+	type Buttons is array (0 to 12) of STD_LOGIC_VECTOR(7 downto 0); --tablica klawiszy 13 elementowa i ka¿dy klawisz jest 8 bitowy (kod klawisza PS2)
+
+	
+	
  
 BEGIN
  
@@ -90,32 +95,46 @@ BEGIN
 	CLR <= '1', '0' after 20 ns;
 	
 	STIM_Proc: process 					--proces do testowania
+		-- Tablica klawiszy
+		type buttonsArray is array ( NATURAL range<> ) of STD_LOGIC_VECTOR( 7 downto 0 );
+		constant T_Buttons : buttonsArray(0 to 12) := (X"1C", X"1D", X"1B", X"24", X"23", X"2B", X"2C", X"34", X"35", X"33", X"3C", X"3B", X"42");
 	BEGIN
-		wait for 20 ns;
-		
-		DI <= X"1C"; 				 			--wciœniêcie klawisza 1C -> A na klawiaturze (C' 261.6256Hz)
+	
+	wait for 20 ns;
+	
+	for i in T_Buttons'RANGE loop --pêtla przechodzi po wartoœci ka¿dego klawisza
+		DI <= T_Buttons(i);
 		F0 <= '0';
-		DI_Rdy <= '1', '0' after 20 ns;		
+		DI_Rdy <= '1', '0' after CLK_period;					
 		wait for 4 ms;							--trzymanie klawisza
 		F0 <= '1';								--puszczenie klawisza
-		
 		wait for 1 ms;
-		
-		DI <= X"34"; 							--wciœniêcie klawisza 34 -> G na klawiaturze (G' 391.9954Hz)
-		F0 <= '0';
-		DI_Rdy <= '1', '0' after 20 ns;		
-		wait for 4 ms;							--trzymanie klawisza
-		F0 <= '1';								--puszczenie klawisza
-		
-		wait for 1 ms;
-		
-		DI <= X"42"; 							--wciœniêcie klawisza 42 -> K na klawiaturze (C'' 523.2511Hz)
-		F0 <= '0';
-		DI_Rdy <= '1', '0' after 20 ns;		
-		wait for 4 ms;							--trzymanie klawisza
-		F0 <= '1';								--puszczenie klawisza
-		
-		wait;
+	end loop;
+--		wait for 20 ns;
+--		
+--		DI <= X"1C"; 				 			--wciœniêcie klawisza 1C -> A na klawiaturze (C' 261.6256Hz)
+--		F0 <= '0';
+--		DI_Rdy <= '1', '0' after 20 ns;		
+--		wait for 4 ms;							--trzymanie klawisza
+--		F0 <= '1';								--puszczenie klawisza
+--		
+--		wait for 1 ms;
+--		
+--		DI <= X"34"; 							--wciœniêcie klawisza 34 -> G na klawiaturze (G' 391.9954Hz)
+--		F0 <= '0';
+--		DI_Rdy <= '1', '0' after 20 ns;		
+--		wait for 4 ms;							--trzymanie klawisza
+--		F0 <= '1';								--puszczenie klawisza
+--		
+--		wait for 1 ms;
+--		
+--		DI <= X"42"; 							--wciœniêcie klawisza 42 -> K na klawiaturze (C'' 523.2511Hz)
+--		F0 <= '0';
+--		DI_Rdy <= '1', '0' after 20 ns;		
+--		wait for 4 ms;							--trzymanie klawisza
+--		F0 <= '1';								--puszczenie klawisza
+--		
+--		wait;
 	END PROCESS;
 	
 END;
